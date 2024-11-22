@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .menu > ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 2rem 0;
+    }
+    .main-image {
+    width: 800px;
+    height: auto;
+    }
+    label {
+    display: block;
+    margin: 1rem 0;
+    }
+    label[for="M"], label[for="F"] {
+    display: inline;
+    }
+    
