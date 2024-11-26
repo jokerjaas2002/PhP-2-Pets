@@ -11,30 +11,27 @@ initial-scale=1.0">
 <body>
 <?php include './menu.php' ?>
 <form method="post" action="./insertar_logica.php">
-<label id="id_mascota">id_mascota: <input id="id_mascota" name="id_mascota"
+<label id="id_mascota">Id mascota: <input id="id_mascota" name="id_mascota"
 type="text" required /></label>
 
-<label id="nombre">Nombre: <input id="nombre" name="nombre"
+<label id="name_pets">Name pets: <input id="name_pets" name="name_pets"
 type="text" required /></label>
 
-<label id="apellido">Apellido: <input id="apellido"
-name="apellido" type="text" required /></label>
-<label id="direccion">Direccion: <textarea id="direccion"
-name="direccion" required rows="5" cols="40"></textarea></label>
-<label id="email">Email: <input id="email" name="email"
+<label id="type_of_pets">Type of Pets: <input id="type_of_pets"
+name="type_of_pets" type="text" required /></label>
+<label id="race">Race: <input type="text" id="race" name="race" required placeholder="Enter animal breed here..."></label>
+<label id="name_client">Name Clients: <input id="name_clients" name="name_clients"
 type="text" required /></label>
-<label id="telefono">Telefono: <input id="telefono"
+<label id="telefono">Phone number: <input id="telefono"
 name="telefono" type="text" required /></label>
 
-<legend>Sexo:</legend>
+<legend>Sex:</legend>
 <input type="radio" name="sexo" id="F" value="F" required>
 <label for="F">Femenino</label>
 <input type="radio" name="sexo" id="M" value="M">
 <label for="M">Masculino</label>
-
-<label id="ciudad">Ciudad: <input id="ciudad" name="ciudad"
-type="text" required /></label>
-<input id="registrar" name="Registrar" type="submit" />
+<label for="date-of-birth">Date of Birth: <input type="date" id="date-of-birth" name="date-of-birth" required></label>
+<input type="submit" value="Register">
 <input id="limpiar" name="Limpiar" type="reset" />
 </form>
 </body>
