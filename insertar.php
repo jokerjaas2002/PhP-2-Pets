@@ -14,9 +14,15 @@ initial-scale=1.0">
 <label id="name_pets">Name pets: <input id="name_pets" name="name_pets"
 type="text" required /></label>
 
-<label id="type_of_pets">Type of Pets: <input id="type_of_pets"
-name="type_of_pets" type="text" required /></label>
-<label id="race">Race: <input type="text" id="race" name="race" required placeholder="Enter animal breed here..."></label>
+<label id="type_of_pets">Type of Pets:
+    <select id="type_of_pets" name="type_of_pets" required>
+        <option value="" disabled selected>Select a type</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Bird">Bird</option>
+    </select>
+</label>
+<label id="race">Breed: <input type="text" id="race" name="race" required placeholder="Enter animal breed here..."></label>
 <label id="name_client">Name Clients: <input id="name_clients" name="name_clients"
 type="text" required /></label>
 <legend>Sex:</legend>
