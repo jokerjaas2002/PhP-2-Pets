@@ -3,9 +3,7 @@ include("./conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    
     if (!empty($_POST['nombre']) && !empty($_POST['tipo']) && !empty($_POST['raza']) && !empty($_POST['sexo']) && !empty($_POST['fecha_nacimiento']) && !empty($_POST['oculto'])) {
-        
         
         $nombre = mysqli_real_escape_string($link, $_POST['nombre']);
         $tipo = mysqli_real_escape_string($link, $_POST['tipo']);
@@ -15,12 +13,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_mascota = mysqli_real_escape_string($link, $_POST['oculto']);
 
         
+        $current_date = date('Y-m-d');
+        if ($fecha_nacimiento > $current_date) {
+            echo "<script>alert('La fecha de nacimiento no puede ser mayor a la fecha actual.'); window.location.href='modificar.php';</script>";
+            exit;
+        }
+
         $sql_check = "SELECT * FROM mascota WHERE id_mascota='$id_mascota'";
         $result_check = mysqli_query($link, $sql_check);
 
         if (mysqli_num_rows($result_check) > 0) {
-            
-            
             $sql = "UPDATE mascota SET nombre='$nombre', tipo='$tipo', raza='$raza', sexo='$sexo', fecha_nacimiento='$fecha_nacimiento' WHERE id_mascota='$id_mascota'";
             
             if (mysqli_query($link, $sql)) {
