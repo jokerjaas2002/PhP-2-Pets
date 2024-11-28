@@ -44,7 +44,11 @@ id="sexo" value="<?php print $row['sexo']; ?>" /></label>
 /><?php } ?>
 <label for="M">Masculino</label>
 
-<label for="fecha_nacimiento">Date of Birth: <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php print $row['fecha_nacimiento']; ?>" /></label>
+<label for="fecha_nacimiento">Date of Birth: 
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" 
+    value="<?php print $row['fecha_nacimiento']; ?>" 
+    max="<?php echo date('Y-m-d'); ?>" />
+</label>
 <input type="hidden" name="oculto" id="oculto" value="<?php print
 $row['id_mascota']; ?>" />
 <input type="submit" name="submit" id="submit" value="Enviar">

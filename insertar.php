@@ -30,7 +30,9 @@ type="text" required /></label>
 <label for="F">Femenino</label>
 <input type="radio" name="sexo" id="M" value="M">
 <label for="M">Masculino</label>
-<label for="fecha_nacimiento">Date of Birth: <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required></label>
+<label for="fecha_nacimiento">Date of Birth: 
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required max="<?php echo date('Y-m-d'); ?>">
+</label>
 <input type="submit" value="Register">
 <input id="limpiar" name="Limpiar" type="reset" />
 </form>
