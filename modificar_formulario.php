@@ -15,13 +15,19 @@ $row = mysqli_fetch_assoc($result);
 action="modificar_logica.php">
 <label for="textfield">Name pets: <input type="text" name="nombre"
 id="nombre" value="<?php print $row['nombre']; ?>" /></label>
-<label for="textfield2">Type of Pets: <input type="text" name="type_of_pets"
-id="type_of_pets" value="<?php print $row['tipo']; ?>" /></label>
+<label id="tipo">Type of Pets:
+    <select id="tipo" name="tipo" required>
+        <option value="" disabled <?php if ($row['tipo'] == '') echo 'selected'; ?>>Select a type</option>
+        <option value="perro" <?php if ($row['tipo'] == 'perro') echo 'selected'; ?>>Dog</option>
+        <option value="gato" <?php if ($row['tipo'] == 'gato') echo 'selected'; ?>>Cat</option>
+        <option value="ave" <?php if ($row['tipo'] == 'ave') echo 'selected'; ?>>Bird</option>
+    </select>
+</label>
 <label for="textfield3">Race: <input type="text"
-name="race" id="race" value="<?php print $row['raza'];
+name="raza" id="raza" value="<?php print $row['raza'];
 ?>" /></label>
-<label for="textfield3">Name Clients: <input type="text" name="sex"
-id="sex" value="<?php print $row['sexo']; ?>" /></label>
+<label for="textfield3">Name Clients: <input type="text" name="sexo"
+id="sexo" value="<?php print $row['sexo']; ?>" /></label>
 
 <legend>Sexo:</legend>
 <?php if ($row['sexo'] == 'F') { ?>
@@ -38,9 +44,9 @@ id="sex" value="<?php print $row['sexo']; ?>" /></label>
 /><?php } ?>
 <label for="M">Masculino</label>
 
-<label for="date-of-birth">Date of Birth: <input type="date" id="date-of-birth" name="date-of-birth" value="<?php print $row['fecha_nacimiento']; ?>" /></label>
+<label for="fecha_nacimiento">Date of Birth: <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php print $row['fecha_nacimiento']; ?>" /></label>
 <input type="hidden" name="oculto" id="oculto" value="<?php print
-$row['cedula']; ?>" />
+$row['id_mascota']; ?>" />
 <input type="submit" name="submit" id="submit" value="Enviar">
 </form>
 </body>

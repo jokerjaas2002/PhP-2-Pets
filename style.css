@@ -75,3 +75,15 @@
         border:1px solid black;
         padding: 0.25rem;
         }
+
+        table td a {
+            margin-right: 10px; 
+            text-decoration: none; 
+            color: #007BFF; 
+            font-weight: bold; 
+        }
+        
+        table td a:hover {
+            text-decoration: underline; 
+            color: #0056b3; 
+        }
