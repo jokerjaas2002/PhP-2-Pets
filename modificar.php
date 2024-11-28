@@ -20,7 +20,7 @@
 </tr>
 <?php
 $sql = "SELECT * FROM mascota";
-$result = mysqli_query($link, $sql); //ejecuto la consulta
+$result = mysqli_query($link, $sql); 
 while ($row = mysqli_fetch_assoc($result)) {
 ?>
 <tr>
